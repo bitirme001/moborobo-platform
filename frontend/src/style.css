@@ -1,0 +1,182 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 25%),
+    linear-gradient(180deg, #eef4ff 0%, #f8fafc 58%, #ffffff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.topbar {
+  height: auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  color: #2563eb;
+}
+
+.content-shell {
+  padding: 24px;
+  gap: 24px;
+  background: transparent;
+}
+
+.map-column {
+  min-width: 0;
+}
+
+.map-card,
+.side-column .ant-card {
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.map-card .ant-card-body {
+  padding: 16px;
+}
+
+.side-column {
+  background: transparent;
+}
+
+.route-map {
+  width: 100%;
+  height: 72vh;
+  min-height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.node-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.node-name {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.node-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.route-summary {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.muted {
+  color: #64748b;
+  margin: 0 0 10px;
+}
+
+.node-tooltip {
+  background: #10239e;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  padding: 2px 8px;
+  box-shadow: none;
+}
+
+.node-tooltip::before {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .content-shell {
+    flex-direction: column;
+  }
+
+  .side-column {
+    width: 100% !important;
+  }
+
+  .route-map {
+    height: 58vh;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content-shell {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .topbar h1 {
+    font-size: 26px;
+  }
+
+  .stats-row,
+  .route-summary {
+    grid-template-columns: 1fr;
+  }
+}
